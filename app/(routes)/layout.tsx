@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './_components/Menu/Header'
+import Header from './_components/Menu/Header';
 import Footer from './_components/Footer'
 
 interface RoutesLayoutProps {
@@ -8,7 +8,7 @@ interface RoutesLayoutProps {
 const RoutesLayout = ({children}:RoutesLayoutProps) => {
   return (
     <>
-    <Header />
+    <Header/>
     {children}
     <Footer />
     </>
