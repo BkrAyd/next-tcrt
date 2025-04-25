@@ -14,10 +14,11 @@
 }
 
 .bgone{
-  background-color: white;
+  background-color: dark;
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-100);
   }
+ color: var(--color-300);
 }
 
 .bgHeader{
@@ -34,6 +35,9 @@
   }
 }
 
+.activeHeader{
+  text-decoration: underline ;
+}
 
 /* @custom-variant dark (&:is(.dark *));
 

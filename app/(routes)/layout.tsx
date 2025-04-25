@@ -9,7 +9,11 @@ const RoutesLayout = ({children}:RoutesLayoutProps) => {
   return (
     <>
     <Header/>
-    {children}
+    <div>
+      <div className="container mx-auto min-h-screen flex flex-col justify-between">
+        {children}
+      </div>
+    </div>
     <Footer />
     </>
     

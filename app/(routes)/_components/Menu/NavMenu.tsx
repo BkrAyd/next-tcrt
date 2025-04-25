@@ -15,13 +15,26 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { categories } from "@/constans"
+import { usePathname } from "next/navigation"
  
 
 const NavMenu = () => {
+
+  const pathname=usePathname()
   return (
     <div className="flex justify-center items-center py-2 bg[var(--color-100)]">
        <NavigationMenu>
       <NavigationMenuList>
+      <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + " bgHeader" + `${pathname=="/"?"activeHeader":""}`}>
+            <Link href="/"> Home</Link>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + " bgHeader" + `${pathname=="/about"?"activeHeader":""}`}>
+            <Link href="/about"> About us</Link>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="bgHeader">Recent Product</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -56,7 +69,7 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bgHeader">Categories</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={" bgHeader" + `${pathname.startsWith(`/shop`) ?"activeHeader":""}`}>Categories</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {categories.map((component) => (
@@ -72,11 +85,9 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + " bgHeader"}>
-            <Link href="/docs"> Documentation</Link>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + " bgHeader" + `${pathname=="/contact"?"activeHeader":""}`}>
+            <Link href="/contact"> Contact</Link>
             </NavigationMenuLink>
-          
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
