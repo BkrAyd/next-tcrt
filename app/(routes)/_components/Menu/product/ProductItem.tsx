@@ -1,3 +1,5 @@
+"use client";
+
 import { ProductType } from "@/constans";
 import React from "react";
 import {
@@ -10,11 +12,26 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import ProductModal from "./ProductModal";
+import { toast } from "sonner";
 
 interface ProductItemProps {
   product: ProductType;
 }
 const ProductItem = ({ product }: ProductItemProps) => {
+
+  const handleAddToCart = () => {
+    toast("Event has been created.",{
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Geri al",
+        onClick: () => console.log("Undo"),
+      },
+    })
+    
+  };
+
+
   return (
     <div>
       <Card>
@@ -31,10 +48,9 @@ const ProductItem = ({ product }: ProductItemProps) => {
             </div>
         </CardContent>
         <CardFooter className="flex justify-between items-center">
-          <Button variant="destructive" className="bg-red-500 text-white cursor-pointer">
-            Detail
-          </Button>
-          <Button variant="default" className="bg-black text-white cursor-pointer">
+          <ProductModal product={product} />
+          <Button variant="default" className="bg-black text-white cursor-pointer"
+          onClick={handleAddToCart}>
             Add to Cart
           </Button>
          

@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from './_components/Menu/Header';
 import Footer from './_components/Footer'
+import { toast, Toaster } from "sonner"
+
 
 interface RoutesLayoutProps {
   children: React.ReactNode
@@ -12,7 +14,10 @@ const RoutesLayout = ({children}:RoutesLayoutProps) => {
     <div>
       <div className="container mx-auto min-h-screen flex flex-col justify-between">
         {children}
+        
       </div>
+      <Toaster />
+      
     </div>
     <Footer />
     </>
