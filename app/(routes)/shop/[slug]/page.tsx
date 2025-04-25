@@ -1,9 +1,23 @@
 import React from 'react'
+import { categories } from '@/constans'
 
 
 interface ShopDetailPageProps {
   params: {
     slug: string
+  }
+}
+
+export async function generateMetadata({ params }: ShopDetailPageProps) {
+  const project = categories.find(product => product.href.includes(params.slug))
+
+  if (!project) {
+      return <div>project not found</div>
+  }
+
+  return {
+      title: project.title,
+      description: project.description,
   }
 }
 const ShopDetailPage = ({params}:ShopDetailPageProps) => {

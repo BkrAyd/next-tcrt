@@ -1,20 +1,32 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 interface AuthLayoutProps {
-  children: React.ReactNode;
+    children: React.ReactNode
 }
 const AuthLayout = ({ children }: AuthLayoutProps) => {
-  return (
-    <div className="flex flex-row items-center justify-center">
-      <div className="hidden md:block lg:w-2/5 h-screen">
-        <Image className="w-full h-screen object-cover brightness-50" alt="logo" src={`/login.jpg`} width={1080} height={1920}/>
-        <div className="w-3/5 bg-[var(--color-300)]">
-            {children}
-        </div>
-      </div>
-    </div>
-  );
-};
+    return (
+        <div className='flex flex-row items-center justify-center space-x-14'>
+            <div className='hidden sm:block lg:w-2/5 h-screen'>
+                <Image
+                    alt="logo"
+                    src={`/login.jpg`}
+                    width={1080}
+                    height={1920}
+                    className='w-full h-screen object-cover brightness-[.7]'
 
-export default AuthLayout;
+                />
+
+            </div>
+
+            <div className='w-full ml-4 md:w-3/5 md:mt-0 mt-16'>
+            {children}
+
+            </div>
+
+
+        </div>
+    )
+}
+
+export default AuthLayout
