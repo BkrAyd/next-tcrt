@@ -22,7 +22,7 @@ const Hero = () => {
       ]}
       opts={{align: "start", loop: true}}>
         <CarouselContent>
-          {CarouselList.map((item, index) => (
+          {CarouselList.map((item) => (
             <CarouselItem key={item.id}>
                 <Image alt="slider" src={item.image} width={1920} height={1080}
                 className="h-96 object-cover md:h-[450px] lg:h-[520px]"/>

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Inter } from "next/font/google";
 import { siteMetadata } from "@/lib/siteMetaData";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),

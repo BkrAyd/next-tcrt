@@ -1,29 +1,23 @@
-import React from 'react'
-import { categories } from '@/constans'
+import { categories } from "@/constans";
 
-
-interface ShopDetailPageProps {
-  params: {
-    slug: string
-  }
-}
-
-export async function generateMetadata({ params }: ShopDetailPageProps) {
-  const project = categories.find(product => product.href.includes(params.slug))
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const project = categories.find((product) =>
+    product.href.includes(params.slug)
+  );
 
   if (!project) {
-      return <div>project not found</div>
+    return {
+      title: "Project Not Found",
+      description: "The requested project could not be found.",
+    };
   }
 
   return {
-      title: project.title,
-      description: project.description,
-  }
-}
-const ShopDetailPage = ({params}:ShopDetailPageProps) => {
-  return (
-    <div>{params.slug}</div>
-  )
+    title: project.title,
+    description: project.description,
+  };
 }
 
-export default ShopDetailPage
+export default function ShopDetailPage({ params }: { params: { slug: string } }) {
+  return <div>{params.slug}</div>;
+}

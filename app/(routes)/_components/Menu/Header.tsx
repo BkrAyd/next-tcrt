@@ -2,7 +2,7 @@
 
 import { ModeToggle } from "@/components/ModeToggle";
 import { Input } from "@/components/ui/input";
-import { Heart, Search, ShoppingBagIcon, UserIcon } from "lucide-react";
+import { Heart, Search, UserIcon } from "lucide-react";
 import { Pacifico } from "next/font/google";
 import React, { useState } from "react";
 import NavMenu from "./NavMenu";
@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
 import CartMenu from "./Cart";
 import Link from "next/link";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { useRouter } from "next/navigation";
 
 const pacifiko = Pacifico({

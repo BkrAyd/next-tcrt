@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './_components/Menu/Header';
 import Footer from './_components/Footer'
-import { toast, Toaster } from "sonner"
+import { Toaster } from "sonner"
 
 
 interface RoutesLayoutProps {

@@ -2,15 +2,10 @@ import React from 'react'
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet"
-import { Menu, ShoppingBagIcon } from 'lucide-react'
-import { categories } from '@/constans'
-import Link from 'next/link'
-  
+import {  ShoppingBagIcon } from 'lucide-react'
+
 
 const CartMenu = () => {
   return (
