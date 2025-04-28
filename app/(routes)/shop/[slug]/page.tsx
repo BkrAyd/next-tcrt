@@ -1,23 +1,25 @@
+"use client";
+
+
+import { useParams } from "next/navigation";
 import { categories } from "@/constans";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = categories.find((product) =>
-    product.href.includes(params.slug)
-  );
+
+
+
+export default function ShopDetailPage() {
+  const { slug } = useParams(); // URL'den slug parametresini alıyoruz
+
+  const project = categories.find((product) => product.href.includes(slug as string));
 
   if (!project) {
-    return {
-      title: "Project Not Found",
-      description: "The requested project could not be found.",
-    };
+    return <div>Project Not Found</div>;
   }
 
-  return {
-    title: project.title,
-    description: project.description,
-  };
-}
-
-export default function ShopDetailPage({ params }: { params: { slug: string } }) {
-  return <div>{params.slug}</div>;
+  return (
+    <div>
+      <h1>{project.title}</h1>
+      <p>{project.description}</p>
+    </div>
+  );
 }
