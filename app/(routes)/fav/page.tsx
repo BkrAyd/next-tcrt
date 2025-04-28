@@ -1,9 +1,7 @@
-import React from 'react'
-
-const FavPage = () => {
+export default function FavPage() {
   return (
-    <div>FavPage</div>
-  )
+    <div>
+      <p>Test</p>
+    </div>
+  );
 }
-
-export default FavPage
